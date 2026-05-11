@@ -7,13 +7,14 @@ export default function useTodosState() {
 
   const addTodo = (newContent) => {
     const id = ++lastTodoIdRef.current;
+
     const newTodo = {
       id,
       content: newContent,
-      regDate: dateToStr(new Date()),
+      regDate: dateToStr(new Date())
     };
-    const newTodos = [...todos, newTodo];
-    setTodos(newTodos);
+
+    setTodos((prev) => [...prev, newTodo]);
   };
 
   const removeTodo = (index) => {
