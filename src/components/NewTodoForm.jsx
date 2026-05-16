@@ -26,7 +26,7 @@ export default function NewTodoForm({ todosState }) {
   return (
     <>
       <form onSubmit={onSubmit} className="flex flex-col mt-4 px-4 gap-2">
-        <TextField ref={textRef} autoComplete="off" name="content" label="할 일을 입력해 주세요" variant="outlined" />
+        <TextField ref={textRef} multiline minRows={3} maxRows={5} autoComplete="off" name="content" label="할 일을 입력해 주세요" variant="outlined" />
         <Button variant='contained' type='submit'>추가</Button>
         <Button variant='contained' type='reset'>취소</Button>
       </form>

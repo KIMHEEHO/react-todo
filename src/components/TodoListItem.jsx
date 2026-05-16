@@ -1,4 +1,5 @@
 import { useState,useRef } from "react";
+import Chip from '@mui/material/Chip';
 
 function TodoListItem({ todosState, todo, index }) {
 const [editMode, setEditMode] = useState(false);
@@ -37,16 +38,18 @@ const [editMode, setEditMode] = useState(false);
     <>
     <div className="mt-4 px-4">
       <li key={index} className="mt-10">
-        {todo.id}.
+        <Chip label={`번호 : ${todo.id}`} variant="outlined" />
         &nbsp;
-        {todo.regDate}
+        <Chip label={todo.regDate} color="primary" variant="outlined" />
         &nbsp;
         {editMode || (
           <>
+          <div className="pt-4 p-10 shadow rounded-[20px] whitespace-pre-wrap leading-relaxed" >
             {todo.content}
             &nbsp;
             <button onClick={showEditMode}>수정</button>
             <button onClick={removeTodo}>삭제</button>
+            </div>
           </>
         )}
         {editMode && (
