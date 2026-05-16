@@ -14,7 +14,7 @@ export default function useTodosState() {
       regDate: dateToStr(new Date())
     };
 
-    setTodos((prev) => [...prev, newTodo]);
+    setTodos((prev) => [newTodo, ...prev]);
   };
 
   const removeTodo = (index) => {
