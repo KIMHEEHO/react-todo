@@ -1,9 +1,9 @@
-import { Toolbar } from '@mui/material';
 import TodoApp from './components/TodoApp'
 import useTodosState from './hooks/useTodosState';
 import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import { useEffect } from 'react';
-
+import './styles/common.css';
 function App() {
  const todosState = useTodosState();
  
@@ -20,13 +20,14 @@ function App() {
     <>
     <AppBar position="fixed">
       <Toolbar>
-        <div className='flex-1'></div>
-        <div className='font-bold'>TODO LIST</div>
-        <div className='flex-1'></div>
+        <div className="flex-1"></div>
+        <div className="font-bold">TODO LIST</div>
+        <div className="flex-1"></div>
       </Toolbar>
     </AppBar>
     <Toolbar />
     <TodoApp todosState={todosState}/>
+
     </>
   )
 }
